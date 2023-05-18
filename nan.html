@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>SearChat</title>
+<link rel="icon" href="logo.png">
+
+<style>
+textarea{
+resize:none;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  background-color: #0b1116;
+  border: 0;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px white;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0 0 20px white;
+}
+
+
+</style>
+</head>
+
+<body bgcolor="#0b1116" style="color:white;font-family:verdana">
+  <table border="0" width="1300" height="500" align="center" background="----------.jpg" align="center>
+    <tr height="50">
+      <td width="580"><img src="Logo.png" width="400" alt="logo"></td>
+      <td align="center" width="150" height="50">
+        <a href="SearChat.html" title="Go to Home">
+          <button class="button"><big>HOME</big></button>
+        </a>
+      </td>
+      <td align="center" width="150" height="50">
+        <a href="#aboutus" title="Go to About">
+          <button class="button"><big>ABOUT</big></button>
+        </a>
+      </td>
+      <td align="center" width="150" height="50">
+        <a href="#gallery" title="Go to Gallery">
+          <button class="button"><big>GALLERY</big></button>
+        </a>
+      </td>
+      <td align="center" width="150" height="50">
+        <a href="#contactus" title="Go to Functions">
+          <button class="button" style="width: 120px;"><big>Functions</big></button>
+        </a>
+      </td>
+      <td align="center" width="150" height="50">
+        <a href="#contactus" title="Go to Contact">
+          <button class="button" style="width: 120px;"><big>CONTACT US</big></button>
+   
+
+    </tr>
+    <tr>
+      <td width="1300" height"400"></td>
+    </tr>
+  </table>
+
+
+
+
+<!-----GALLERY----->
+
+<div id="gallery">
+<table border="0" width="1300" height="30" align="center" bgcolor="#0b1116">
+<tr>
+<td>
+<center>
+<p style=width:250;height:30;background-
+color:"#1116;border:0;color:white"><big><big><b>GALLERY</b></big></big></p>
+</center>
+</td>
+</tr>
+</table>
+
+
+
+<table style=;"border:0;-collapes:collapes" width="1300" height="300" align="center" bgcolor="#0b1116">
+<tr>
+<td align="center" width="400" height="500"><img src="3.jpg" width="300" height="500"></td>
+<td align="center" width="400" height="500"><img src="2.jpg" width="300" height="500"></td>
+<td align="center" width="400" height="500"><img src="6.jpg" width="300" height="500"></td>
+<td align="center" width="400" height="500"><img src="1.png" width="300" height="500"></td>
+</tr>
+</table>
+</div>
+
+
+<!-----About Us----->
+
+<!-- About Us -->
+<div id="aboutus">
+	<p bgcolor="#0b1116"</p>
+  <table border="0" width="1300" height="500" align="center">
+    <tr>
+      <td width="600" style="padding:50px;">
+        <h2 style="color:white;">About Us</h2>
+        <p style="font-size:18px;color:white;">Looking for a fast and reliable way to find the information you need? Look no further than SearChat! Our advanced search algorithms and AI technology make it easy to find exactly what you’re looking for. Whether you need answers to a specific question or want to explore a topic in depth, SearChat has got you covered. Try us out today and see the difference for yourself.</p>
+      </td>
+      <td width="600">
+        <img src="aboutus.png" width="600" height="300">
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- FUNCTIONS -->
+<div id="functions">
+	<p bgcolor="#0b1116"</p>
+  <table border="0" width="1300" height="400" align="center">
+    <tr>
+      <td align="center">
+        <h2>Functions</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="display:flex;justify-content:space-around;">
+          <img src="gallery1.jpg" width="400" height="300">
+          <img src="gallery2.jpg" width="400" height="300">
+          <img src="gallery3.jpg" width="400" height="300">
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- Contact Us -->
+<div id="contactus" style="margin-top: 50px;">
+  <h2 style="text-align: center; font-size: 36px;">CONTACT US</h2>
+  <p style="text-align: center; font-size: 18px;">Have a question or comment? Send us a message and we'll get back to you as soon as possible.</p>
+  <?php
+    if(isset($_POST['submit'])){
+      $to = "contact@searchat.com"; // Email address to send form submission to
+      $name = $_POST['name']; // Visitor's name
+      $email = $_POST['email']; // Visitor's email address
+      $message = $_POST['message']; // Visitor's message
+
+      // Email subject
+      $subject = "New message from SearChat Contact Form";
+
+      // Email body
+      $body = "You have received a new message from the SearChat Contact Form.\n\n".
+              "Name: ".$name."\n".
+              "Email: ".$email."\n".
+              "Message: ".$message."\n";
+     
+      
+      // Send email
+      mail($to, $subject, $body, $headers);
+      // Confirmation message
+
+
+ // Confirmation message
+
+echo '<div style="display: flex; flex-direction: column; align-items: center;"><p style="font-size: 18px; color: green;"></p></div>
+
+<div style="display: flex; justify-content: center;">
+  <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" style="width: 500px;">
+    <input type="text" id="name" name="name" placeholder="Your Name" style="width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 4px; box-sizing: border-box;" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 4px; box-sizing: border-box;" required>
+    <textarea id="message" name="message" placeholder="Your Message" style="width: 100%; height: 200px; padding: 12px; margin: 8px 0; border: none; border-radius: 4px; box-sizing: border-box; resize: none;" required></textarea>
+    <input type="submit" name="submit" value="SEND MESSAGE" style="background-color: #0b1116; color: white; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; text-transform: uppercase; box-shadow: 0 0 10px white; transition: all 0.2s ease-in-out;">
+  </form>
+</div>
+
+
+<!-----LAST PART----->
+<table border="0" width"1300" height="30" align="center" bgcolor="#0b1116">
+<tr>
+<td></td>
+<tr>
+</table>
+
+<table border="0" width="1300" height"30" align="center">
+<tr>
+<td>
+<p align="center"><b>SearChat</b></p>
+<p align="center">ABC@gmail.com</p>
+<p align="center">Phone number</p>
+<p align="center">Address</p>
+
+<pre align="center" width="40"> </a> <a href=""></a> <a href=//"https://twitter.com/KyroMago"title="Twitter"><img
+src="tt.png" width="40" height="40"></a> <a href=//"https://www.facebook.com/kyro.mago.54"
+title="Facebook"><img src="fb.png" width="40" height="40"></a> <a href=//"https://www.instagram.com/kairoooo06/?hl=en"title="Instagram"><img src="ig.png" width="40" height="40"></a> <a href="https://www.youtube.com/channel/UCUa1A13hZRvjDATAo0YleYg" title="YouTube"><img src="yt.png" 
+width="40" height="40"></a>
+</pre>
+<p style="text-align: center; font-size: 18px; color: green;">Thank you for contacting us! We will get back to you as soon as possible.</p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
